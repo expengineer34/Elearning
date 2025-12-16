@@ -1,0 +1,269 @@
+/* src/index.css */
+:root {
+  /* Palet Warna */
+  --primary-color: #2563eb;    /* Biru Utama */
+  --primary-hover: #1d4ed8;    /* Biru Gelap (saat hover) */
+  --text-color: #1e293b;       /* Teks Gelap */
+  --bg-color: #f8fafc;         /* Background Abu Terang */
+  --white: #ffffff;
+  --danger: #ef4444;           /* Merah Error */
+  
+  /* Spacing & Border */
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Helper Classes sederhana (Utility buatan sendiri) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Style untuk Form Input (akan sering dipakai) */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.page-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ... CSS sebelumnya biarkan saja ... */
+
+/* --- DASHBOARD LAYOUT --- */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #0f172a; /* Warna gelap */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #60a5fa;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: var(--radius);
+  margin-bottom: 5px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.btn-logout {
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  margin-top: auto; /* Dorong ke bawah */
+  color: #ef4444; /* Merah */
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  background-color: white;
+  padding: 15px 30px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-area {
+  padding: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.badge-dosen {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.badge-mhs {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* ... CSS sebelumnya ... */
+
+/* --- COURSE MANAGER STYLES --- */
+
+/* Grid Layout untuk Card */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Card Style */
+.course-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.course-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Form Container (Box Putih saat tambah data) */
+.form-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.badge-info {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* ... CSS sebelumnya ... */
+
+/* Tambahan Style Gambar Card */
+.course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Agar gambar tidak gepeng */
+  border-radius: var(--radius) var(--radius) 0 0; /* Radius cuma di atas */
+  margin-bottom: 15px;
+  background-color: #eee; /* Placeholder warna abu kalau loading */
+}
+
+/* Modifikasi padding card agar gambar nempel ke pinggir atas */
+.course-card {
+  padding: 0; /* Reset padding container */
+  overflow: hidden; /* Supaya gambar gak keluar border radius */
+}
+
+.course-content {
+  padding: 20px; /* Padding hanya untuk teks */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
